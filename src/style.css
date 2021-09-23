@@ -11,6 +11,7 @@
 	--accent2: rgb(197, 30, 85);
 	--bg: rgb(25, 26, 29);
 	--bg-alt: rgb(30, 31, 35);
+	--hover: rgb(36, 37, 41);
 	--text: rgb(240, 240, 240);
 	--text-alt: rgb(170, 170, 170);
 	--radius: 25px;
@@ -20,7 +21,7 @@
 	--darkest: 0.175;
 	--close-shadow: 0 2px 6px rgba(0, 0, 0, var(--lightest)), 0 8px 14px rgba(0, 0, 0, var(--light));
 	--distant-shadow: 0 2px 6px rgba(0, 0, 0, var(--dark)), 0 12px 20px rgba(0, 0, 0, var(--darkest));
-	--transition: color 0.25s, background-color 0.25s, box-shadow 0.25s, transform 0.2s, opacity 0.25s;
+	--transition: color 0.25s, background-color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.2s, opacity 0.25s, filter 0.25s;
 }
 
 body {

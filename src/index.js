@@ -1,5 +1,6 @@
 import createHome from './home.js';
 import createMenu from './menu.js';
+import createContact from './contact.js';
 import './style.css';
 import Logo from './logo.png';
 
@@ -39,7 +40,7 @@ function selectTab(e) {
 }
 
 function createContent(i) {
-	const createFunctions = [createHome, createMenu];
+	const createFunctions = [createHome, createMenu, createContact];
 	if (!tabContent.firstElementChild) {
 		tabContent.appendChild(createFunctions[i]());
 	} else if (tabContent.firstElementChild.dataset.id != i) {

@@ -10,6 +10,7 @@
 	--accent: rgb(71, 41, 206);
 	--accent2: rgb(197, 30, 85);
 	--bg: rgb(25, 26, 29);
+	--bg-alt: rgb(30, 31, 35);
 	--text: rgb(240, 240, 240);
 	--text-alt: rgb(170, 170, 170);
 	--radius: 25px;
@@ -130,6 +131,7 @@ header {
 
 #content > * {
 	width: 1200px;
+	max-width: 80vw;
 }
 
 @keyframes fade-in {

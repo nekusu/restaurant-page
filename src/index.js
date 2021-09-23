@@ -1,4 +1,5 @@
 import createHome from './home.js';
+import createMenu from './menu.js';
 import './style.css';
 import Logo from './logo.png';
 
@@ -19,7 +20,7 @@ function createHeader() {
 		li.addEventListener('click', () => createContent(i));
 		ul.appendChild(li);
 	}
-	img.addEventListener('click', () => ul.childNodes[0].click());
+	img.addEventListener('click', () => ul.firstElementChild.click());
 	header.appendChild(img);
 	header.appendChild(ul);
 	return header;
@@ -38,7 +39,7 @@ function selectTab(e) {
 }
 
 function createContent(i) {
-	const createFunctions = [createHome];
+	const createFunctions = [createHome, createMenu];
 	if (!tabContent.firstElementChild) {
 		tabContent.appendChild(createFunctions[i]());
 	} else if (tabContent.firstElementChild.dataset.id != i) {

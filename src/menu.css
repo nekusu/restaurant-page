@@ -1,0 +1,66 @@
+#menu {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-gap: 10px;
+}
+
+#menu .food.box {
+	margin: 12px;
+	padding: 25px 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--bg-alt);
+}
+
+#menu .food.box:hover {
+	box-shadow: var(--distant-shadow);
+	transform: scale(1.05);
+}
+
+#menu .food.box .name {
+	font-size: 30px;
+	font-weight: 800;
+	color: var(--accent2);
+}
+
+#menu .food.box .description {
+	margin: 15px 0;
+	font-size: 16px;
+	line-height: 22px;
+	color: var(--text-alt);
+}
+
+#menu .food.box .price-order {
+	max-width: 164px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#menu .food.box .price {
+	margin: 5px 0;
+	font-size: 28px;
+	font-weight: 700;
+	color: var(--text);
+}
+
+#menu .food.box .order {
+	margin: 5px 15px;
+	padding: 10px 22px;
+	cursor: pointer;
+	font-size: 20px;
+	font-weight: 700;
+	color: var(--text);
+	background-color: var(--accent);
+}
+
+#menu .food.box .order:hover {
+	box-shadow: 0 10px 20px rgba(71, 41, 206, 0.4);
+	transform: scale(1.075);
+}
+
+#menu .food.box .order:active {
+	transform: scale(0.925);
+}

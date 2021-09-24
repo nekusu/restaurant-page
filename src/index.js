@@ -6,21 +6,27 @@ import Logo from './logo.png';
 
 const tabContent = document.querySelector('#content');
 
-function createHeader() {
-	const header = document.createElement('header');
-	const img = document.createElement('img');
-	const ul = document.createElement('ul');
+function createTabs() {
 	const tabs = ['Home', 'Menu', 'Contact'];
-	img.id = 'logo';
-	img.src = Logo;
-	ul.id = 'tabs';
+	const listItems = [];
 	for (let i = 0; i < tabs.length; i++) {
 		const li = document.createElement('li');
 		li.textContent = tabs[i];
 		li.classList.add('tab');
 		li.addEventListener('click', () => createContent(i));
-		ul.appendChild(li);
+		listItems.push(li);
 	}
+	return listItems;
+}
+
+function createHeader() {
+	const header = document.createElement('header');
+	const img = document.createElement('img');
+	const ul = document.createElement('ul');
+	img.id = 'logo';
+	img.src = Logo;
+	ul.id = 'tabs';
+	createTabs().forEach(tab => ul.appendChild(tab));
 	img.addEventListener('click', () => ul.firstElementChild.click());
 	header.appendChild(img);
 	header.appendChild(ul);

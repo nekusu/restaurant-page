@@ -8,7 +8,7 @@ function createFoodBox(food, i) {
 	const foodPrice = document.createElement('div');
 	const foodOrder = document.createElement('button');
 	foodBox.classList.add('food', 'box');
-	foodBox.style.animation = `${i * 0.2}s hidden, 1s move-in ${i * 0.2}s`
+	foodBox.style.animation = `${i * 0.1}s hidden, 0.85s move-in ${i * 0.1}s`
 	foodName.textContent = food.name;
 	foodName.classList.add('name');
 	foodDescription.textContent = food.description;
@@ -18,6 +18,7 @@ function createFoodBox(food, i) {
 	foodPrice.classList.add('price');
 	foodOrder.textContent = 'Order';
 	foodOrder.classList.add('order', 'box');
+	foodOrder.addEventListener('click', () => tabs.lastElementChild.click());
 	[foodPrice, foodOrder].forEach(el => foodPriceOrder.appendChild(el));
 	[foodName, foodDescription, foodPriceOrder].forEach(el => foodBox.appendChild(el));
 	return foodBox;

@@ -48,6 +48,7 @@ function createForm() {
 function createContact() {
 	const contact = document.createElement('div');
 	const contactUs = document.createElement('div');
+	const infoContainer = document.createElement('div');
 	const phone = createContactInfo('+1-555-4444-333', 'phone');
 	const email = createContactInfo('fakemail@burgerstore.com', 'email');
 	const location = createContactInfo('160 Broadway, New York, NY 10038, United States', 'place');
@@ -56,7 +57,9 @@ function createContact() {
 	contact.dataset.id = 2;
 	contactUs.id = 'contact-us';
 	contactUs.textContent = 'Contact us!';
-	[contactUs, phone, email, location, form].forEach(el => contact.appendChild(el));
+	infoContainer.id = 'info-container';
+	[phone, email, location].forEach(el => infoContainer.appendChild(el));
+	[contactUs, infoContainer, form].forEach(el => contact.appendChild(el));
 	return contact;
 }
 

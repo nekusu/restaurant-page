@@ -14,8 +14,9 @@
 }
 
 #menu .food.box:hover {
+	background-color: var(--hover);
 	box-shadow: var(--distant-shadow);
-	transform: scale(1.05);
+	transform: scale(1.05) translateY(-4px);
 }
 
 #menu .food.box .name {

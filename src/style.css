@@ -36,6 +36,9 @@ html {
 }
 
 body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	min-height: 100vh;
 	background-color: var(--bg);
 }
@@ -144,6 +147,41 @@ header {
 #content > * {
 	width: 1200px;
 	max-width: 80vw;
+}
+
+footer {
+	min-height: 120px;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#github {
+	padding: 10px 20px;
+	display: inline-block;
+	user-select: none;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: var(--text);
+	background-color: var(--hover);
+	transition: var(--transition);
+	animation: calc(var(--delay) * 3) hidden, var(--time) move-in calc(var(--delay) * 3);
+}
+
+#github img {
+	height: 25px;
+	margin-left: 10px;
+	position: relative;
+	top: -1px;
+	vertical-align: middle;
+	filter: invert(.95);
+}
+
+#github:hover {
+	box-shadow: var(--distant-shadow);
+	transform: scale(1.1);
 }
 
 @keyframes fade-in {

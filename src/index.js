@@ -4,8 +4,6 @@ import createContact from './contact.js';
 import './style.css';
 import Logo from './logo.png';
 
-const tabContent = document.querySelector('#content');
-
 function createTabs() {
 	const tabs = ['Home', 'Menu', 'Contact'];
 	const listItems = [];
@@ -27,6 +25,8 @@ function createHeader() {
 	img.src = Logo;
 	ul.id = 'tabs';
 	createTabs().forEach(tab => ul.appendChild(tab));
+	ul.addEventListener('click', selectTab);
+	ul.firstElementChild.click();
 	img.addEventListener('click', () => ul.firstElementChild.click());
 	header.appendChild(img);
 	header.appendChild(ul);
@@ -46,6 +46,7 @@ function selectTab(e) {
 }
 
 function createContent(i) {
+	const tabContent = document.querySelector('#content');
 	const createFunctions = [createHome, createMenu, createContact];
 	if (!tabContent.firstElementChild) {
 		tabContent.appendChild(createFunctions[i]());
@@ -54,6 +55,26 @@ function createContent(i) {
 	}
 }
 
-document.body.insertBefore(createHeader(), tabContent);
-tabs.addEventListener('click', selectTab);
-tabs.firstElementChild.click();
+function createGithubButton() {
+	const a = document.createElement('a');
+	const img = document.createElement('img');
+	a.id = 'github';
+	a.href = 'https://github.com/nekusu';
+	a.target = '_blank';
+	a.title = 'Check my GitHub!';
+	a.textContent = 'nekusu';
+	a.classList.add('box');
+	img.src = 'https://pngimg.com/uploads/github/github_PNG80.png';
+	img.alt = 'GitHub';
+	a.appendChild(img);
+	return a;
+}
+
+function createFooter() {
+	const footer = document.createElement('footer');
+	footer.appendChild(createGithubButton());
+	return footer;
+}
+
+document.body.insertBefore(createHeader(), document.body.firstElementChild);
+document.body.appendChild(createFooter());
